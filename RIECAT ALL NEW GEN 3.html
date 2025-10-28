@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riecat All New Gen 3 | Bengkel Print - Responsive</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    /* Small additions to complement Tailwind */
+    :root { --brand: #0f73a8; --brand-2: #42a9e1; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+    /* Testimonial track (responsive: 1 per view on mobile, up to 3 on larger) */
+    .testi-track { display: flex; transition: transform 0.55s cubic-bezier(.2,.9,.2,1); will-change: transform; }
+    .testi-slide { flex: 0 0 100%; box-sizing: border-box; padding: 1rem; }
+    @media (min-width: 768px) { .testi-slide { flex: 0 0 50%; } }
+    @media (min-width: 1024px) { .testi-slide { flex: 0 0 33.3333%; } }
+
+    /* Mascot styling (keeps inside footer-relative) */
+    .mascot { position: absolute; right: 1rem; bottom: 1.25rem; width: 112px; height: auto; z-index: 40; transform: translateY(6%); filter: drop-shadow(0 10px 18px rgba(2,18,40,0.18)); pointer-events: none; }
+    @media (max-width: 640px) { .mascot { width: 76px; right: 0.5rem; bottom: 0.75rem; } }
+
+    /* Decorative shadow under hero image */
+    .hero-img { box-shadow: 0 10px 30px rgba(2,18,40,0.12); border-radius: 0.5rem; }
+
+    /* subtle focus style for keyboard nav */
+    a:focus, button:focus { outline: 3px solid rgba(66,169,225,0.25); outline-offset: 3px; }
+
+    /* Footer background helper */
+    .footer-bg { background: linear-gradient(180deg, var(--brand-2) 0%, var(--brand) 100%); }
+ 
+  </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="sticky top-0 bg-white shadow-sm z-50">
+      <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+        <a href="#" class="flex items-center gap-3">
+          <img src="./images/Logo-bengkel-print-shop-Biru 1.png" alt="Logo Bengkel Print" class="h-8 w-auto">
+        </a>
+        <nav class="hidden md:flex items-center gap-6 font-semibold">
+          <a href="https://bengkelprint.co.id/shop/" class="hover:text-sky-600">Pricing</a>
+          <a href="#features" class="hover:text-sky-600">Features</a>
+          <a href="#contact" class="hover:text-sky-600">Contact</a>
+          <a href="https://bengkelprint.co.id/my-account/" class="bg-sky-500 text-white px-4 py-2 rounded-md hover:bg-sky-600 transition">SIGN UP</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="mobileBtn" class="p-2 rounded-md focus:ring-2 focus:ring-sky-300">
+            <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden bg-white border-t">
+        <div class="px-6 py-4 flex flex-col gap-3">
+          <a href="https://bengkelprint.co.id/shop/">Pricing</a>
+          <a href="#features">Features</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+  
+  <!-- HERO -->
+  <section class="bg-gradient-to-b from-sky-400 to-sky-300 text-white py-14 md:py-20 text-center px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight" data-aos="fade-up">Riecat All New Gen 3</h1>
+      <p class="text-sm md:text-lg text-sky-50 mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="80">Produk local lebih handal berikutnya adalah generasi terbaru dari Riecat All New.Yup’s bener sekali, seorang pembisnis pemula perlu kemudahan dalam mengoperasikan mesin, perawatan dan perbaikan.menjadi dasar dari mesin kami yang baru ini, syarat dengan kemudahan dalam beberapa aspek terkait dg mesin Riecat ini. Sehingga mesin yg sangat compact ini menjadi pilihan terbaik khususnya untuk pemula.</p>
+
+      <!-- Use a remote placeholder image. Replace with local path if available. -->
+      <div class="mx-auto max-w-3xl">
+        <img src="./images/DSC08480 1.png" alt="Riecat Gen 3" class="mx-auto hero-img w-full max-w-3xl h-auto object-cover rounded-lg" data-aos="zoom-in"/>
+      </div>
+
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="#features" class="inline-block bg-white text-sky-700 px-5 py-3 rounded-md font-semibold shadow hover:scale-[1.01] transition">Lihat Fitur</a>
+        <a href="https://bengkelprint.co.id/my-account/" class="inline-block bg-transparent border border-white px-5 py-3 rounded-md font-semibold hover:bg-white/10 transition">Login</a>
+      </div>
+    </div>
+  </section>
+
+ <!-- FEATURES -->
+<section id="features" class="bg-sky-50 py-12 md:py-20">
+  <div class="max-w-6xl mx-auto px-6 space-y-12">
+
+    <!-- SUCTION BUTTON -->
+    <div class="grid gap-8 md:grid-cols-2 items-center">
+      <div data-aos="fade-right">
+        <h3 class="text-2xl md:text-3xl font-bold text-sky-700 mb-3">Suction Button</h3>
+        <p class="text-slate-600 text-sm md:text-base">
+          Tombol Suction atau disebut juga Tombol Hisap Manual adalah fitur pada printer DTF (Direct to Film)
+          RIECAT GEN 3 yang berfungsi untuk menyedot tinta dari printhead secara manual. Tujuannya:
+        </p>
+        <br>Membersihkan sisa tinta pada head printer.<br>
+        <br>Mencegah tinta menumpuk atau mengering.<br>
+        <br>Membantu saat proses maintenance (pemeliharaan).<br>
+      </div>
+      <div class="flex justify-center md:justify-end" data-aos="fade-left">
+        <img src="./images/Gemini_Generated_Image_llm4l2llm4l2llm4 4 - Copy (2).png"
+          alt="Suction Button" class="rounded-lg shadow-lg w-[300px] max-w-full h-auto" />
+      </div>
+    </div>
+
+    <!-- CAPPING STATION -->
+    <div class="grid gap-8 md:grid-cols-2 items-center">
+      <div class="order-2 md:order-1 flex justify-center md:justify-start" data-aos="fade-right">
+        <img src="./images/Gemini_Generated_Image_bo8foobo8foobo8f 4.png"
+          alt="Capping Station" class="rounded-lg shadow-lg w-[300px] max-w-full h-auto" />
+      </div>
+      <div class="order-1 md:order-2" data-aos="fade-left">
+        <h3 class="text-2xl md:text-3xl font-bold text-sky-700 mb-3">Lock & Release Capping Station</h3>
+        <p class="text-slate-600 text-sm md:text-base">
+          Printer DTF RIECAT ALL NEW GEN 3 memiliki sistem Automatic Capping / Pump Unlock & Lock yang dirancang
+          untuk memudahkan pembersihan dan perawatan.
+        </p>
+        <br>Automatic Capping / Pump Unlock & Lock: Fitur ini disorot sebagai peningkatan baru pada Riecat Alfa Gen 3. Ini secara otomatis membuka dan mengunci mekanisme pompa, yang memfasilitasi pembersihan capping station dan printhead yang lebih mudah.<br>
+        <br>Tombol Capping: Printer dilengkapi dengan "Tombol Capping" khusus yang terintegrasi ke dalam mesin. Tombol ini digunakan untuk menyederhanakan perawatan printer.<br>
+        <br>Automatic Unlock & Lock of the pump: Ini secara eksplisit disebutkan sebagai fungsi yang dapat diakses melalui "Tombol Capping" atau melalui fitur-fitur mesin.<br>
+      </div>
+    </div>
+
+    <!-- TEMPERATURE CONTROL -->
+    <div class="grid gap-8 md:grid-cols-2 items-center">
+      <div data-aos="fade-right">
+        <h3 class="text-2xl md:text-3xl font-bold text-sky-700 mb-3">Temperature & Humidity Control</h3>
+        <p class="text-slate-600 text-sm md:text-base">
+          Memiliki fitur kontrol suhu dan kelembaban yang sangat penting untuk menjaga kualitas cetak, terutama
+          pada printer DTF yang sensitif terhadap kondisi lingkungan.
+        </p>
+        <br>Umumnya disarankan antara 20°C hingga 28°C (68°F hingga 82°F).<br>
+        <br>Beberapa sumber menyebutkan rentang 24°C – 26°C atau 18°C-30°C.<br>
+        <br>Umumnya disarankan antara 40% hingga 65% RH.<br>
+        <br>Beberapa sumber menyarankan 50-70% atau 45%-65%.<br>
+      </div>
+      <div class="flex justify-center md:justify-end" data-aos="fade-left">
+        <img src="./images/Gemini_Generated_Image_w90e53w90e53w90e 5.png"
+          alt="Temperature Control" class="rounded-lg shadow-lg w-[300px] max-w-full h-auto" />
+      </div>
+    </div>
+
+    <!-- WIMS -->
+    <div class="grid gap-8 md:grid-cols-2 items-center">
+      <div class="order-2 md:order-1 flex justify-center md:justify-start" data-aos="fade-right">
+        <img src="./images/Gemini_Generated_Image_uub6lxuub6lxuub6 3.png"
+          alt="WIMS" class="rounded-lg shadow-lg w-[300px] max-w-full h-auto" />
+      </div>
+      <div class="order-1 md:order-2" data-aos="fade-left">
+        <h3 class="text-2xl md:text-3xl font-bold text-sky-700 mb-3">WIMS - Rotation & Mix Control</h3>
+        <p class="text-slate-600 text-sm md:text-base">
+          WIMS adalah fitur krusial pada printer DTF, khususnya pada RIECAT ALL NEW GEN 3, yang berfungsi untuk
+          mengelola dan menjaga kualitas tinta putih.
+        </p>
+        <br>Mencegah Pengendapan: WIMS secara otomatis akan mengocok tinta putih di dalam tabung splitter atau tangki. Ini mencegah partikel pigmen menumpuk di bagian bawah, yang sangat vital untuk menjaga konsistensi warna putih dan mencegah clogging (penyumbatan) pada print head.<br>
+        <br>Sirkulasi Tinta Optimal: Sistem ini memastikan tinta putih terus bersirkulasi dengan lancar menuju print head, menjaga aliran tinta tetap stabil selama proses pencetakan.<br>
+        <br>Perawatan Otomatis: Dengan WIMS, Anda tidak perlu lagi repot mengocok botol tinta atau dumper secara manual, membuat perawatan printer jadi lebih mudah dan efisien.<br>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="bg-sky-100 py-12 md:py-16 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-2xl font-bold text-sky-700 mb-6 text-center" data-aos="fade-up">Customer Reviews</h3>
+
+      <div class="relative">
+        <!-- visible frame -->
+        <div class="w-full overflow-hidden rounded-lg">
+          <div id="testiTrack" class="testi-track">
+
+            <!-- Testimonial items (replace/add as needed) -->
+            <div class="testi-slide">
+              <div class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col items-center text-center">
+                <img src="./images/image 5.png" class="w-20 h-20 rounded-full -mt-12 border-4 border-white shadow-md" alt="Yusuf"/>
+                <h4 class="font-semibold mt-4">Yusuf Krisna</h4>
+                <p class="text-yellow-400 text-lg mt-1">★★★★★</p>
+                <p class="text-sm text-slate-600 mt-2">Mantap.. bagus banget pelayanannya.. kalau mau buka usaha sablon bisa cari bahan dan alatnya di sini</p>
+              </div>
+            </div>
+
+            <div class="testi-slide">
+              <div class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col items-center text-center">
+                <img src="./images/image 7.png" class="w-20 h-20 rounded-full -mt-12 border-4 border-white shadow-md" alt="Arill"/>
+                <h4 class="font-semibold mt-4">Arill Khusna</h4>
+                <p class="text-yellow-400 text-lg mt-1">★★★★★</p>
+                <p class="text-sm text-slate-600 mt-2">Tempat jual mesin digital printing terlengkap. Asli produk lokal 👍</p>
+              </div>
+            </div>
+
+            <div class="testi-slide">
+              <div class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col items-center text-center">
+                <img src="./images/image 7.png" class="w-20 h-20 rounded-full -mt-12 border-4 border-white shadow-md" alt="Arga"/>
+                <h4 class="font-semibold mt-4">Arga Amala</h4>
+                <p class="text-yellow-400 text-lg mt-1">★★★★★</p>
+                <p class="text-sm text-slate-600 mt-2">Tempat penjualan produk printer yang dimodifikasi untuk percetakan kecil dan menengah, pelayanan ramah.</p>
+              </div>
+            </div>
+
+            <div class="testi-slide">
+              <div class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col items-center text-center">
+                <img src="./images/Rectangle 30.png" class="w-20 h-20 rounded-full -mt-12 border-4 border-white shadow-md" alt="Rina"/>
+                <h4 class="font-semibold mt-4">Rina Dewi</h4>
+                <p class="text-yellow-400 text-lg mt-1">★★★★★</p>
+                <p class="text-sm text-slate-600 mt-2">Pengiriman cepat dan teknisi ramah. Sangat direkomendasikan untuk pemula.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CONTACT SECTION -->
+<section id="contact" class="bg-sky-50 py-14 md:py-20"> 
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-start">
+
+    <!-- Info Kontak -->
+    <div data-aos="fade-right">
+      <h3 class="text-2xl md:text-3xl font-bold text-sky-700 mb-6">Hubungi Kami</h3>
+      <p class="text-slate-600 text-sm mb-6">Kami siap membantu Anda untuk konsultasi produk, layanan, dan dukungan teknis.</p>
+      
+      <ul class="space-y-3 text-slate-700 text-sm">
+        <li><span class="font-semibold">Email:</span> bengkel@bengkel.com</li>
+        <li><span class="font-semibold">Telepon:</span> +62 832 723 0272</li>
+        <li><span class="font-semibold">Alamat:</span> Surabaya, Indonesia</li>
+      </ul>
+    </div>
+
+    <!-- Form -->
+    <form data-aos="fade-left" class="space-y-4">
+      <div class="grid md:grid-cols-2 gap-4">
+        <input type="text" placeholder="Kontak Saya" class="w-full px-4 py-3 rounded-md border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400 text-slate-700">
+        <input type="email" placeholder="Email Anda" class="w-full px-4 py-3 rounded-md border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400 text-slate-700">
+      </div>
+      <textarea rows="5" placeholder="Pesan Anda" class="w-full px-4 py-3 rounded-md border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400 text-slate-700"></textarea>
+      <button type="submit" class="bg-gradient-to-r from-sky-400 to-sky-500 text-white font-semibold px-6 py-3 rounded-md hover:opacity-90 transition">
+        Kirim Pesan
+      </button>
+    </form>
+  </div>
+</section>
+
+
+        <!-- indicators -->
+        <div class="mt-4 flex items-center justify-center gap-2">
+          <button class="w-2 h-2 rounded-full bg-slate-300" aria-label="Indicator 1"></button>
+          <button class="w-2 h-2 rounded-full bg-slate-300" aria-label="Indicator 2"></button>
+          <button class="w-2 h-2 rounded-full bg-slate-300" aria-label="Indicator 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (relative for mascot) -->
+<footer id="footer" class="relative footer-bg text-white py-10">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+    <!-- Kolom 1 -->
+    <div>
+      <!-- Logo + Fitur BP Care (sejajar) -->
+      <div class="flex flex-col items-center md:flex-row md:items-center md:justify-start gap-6 mb-6">
+        <img src="../images/image 13.png"
+          alt="Logo" class="w-[150px] md:w-[180px] h-auto">
+
+        <!-- Fitur BP Care di sebelah logo -->
+        <div class="text-center md:text-left">
+          </a>
+        </div>
+      </div>
+
+      <!-- Media Sosial -->
+      <div class="flex justify-center md:justify-start gap-4 mb-5">
+        <a href="https://www.instagram.com/bengkelprintindonesia/?hl=id" aria-label="Instagram" class="hover:opacity-80 transition">
+          <img src="./images/image 3.png" alt="Instagram" class="w-6 h-6">
+        </a>
+        <a href="https://www.facebook.com/bengkelprintshop/" aria-label="Facebook" class="hover:opacity-80 transition">
+          <img src="./images/facebook.png" alt="Facebook" class="w-6 h-6">
+        </a>
+        <a href="https://www.tiktok.com/@bengkelprintindonesia" aria-label="Tiktok" class="hover:opacity-80 transition">
+          <img src="./images/tiktok (1).png" alt="Tiktok" class="w-6 h-6">
+        </a>
+        <a href="https://www.youtube.com/user/TheBengkelprint" aria-label="YouTube" class="hover:opacity-80 transition">
+          <img src="./images/youtube.png" alt="youtube" class="w-6 h-6">
+        </a>
+      </div>
+
+      <!-- Profile Kami -->
+      <h4 class="font-semibold mb-3">Profile Kami</h4>
+      <ul class="space-y-1 text-sm">
+         <li><a href="https://bengkelprintcare.com/" class="hover:underline">Fitur BP Care</a></li>
+        <li><a href="https://bengkelprint.co.id/blog/" class="hover:underline">Blog</a></li>
+        <li><a href="https://bengkelprintcare.com/distributor-bengkel/" class="hover:underline">Distributor</a></li>
+      </ul>
+    </div>
+
+    <!-- Kolom 2 -->
+    <div>
+      <h4 class="font-semibold mb-3">Layanan Kami</h4>
+      <ul class="space-y-1 text-sm">
+        <li><a href="https://bengkelprintcare.com/software-download/" class="hover:underline">Unduh Software</a></li>
+        <li><a href="https://bengkelprintcare.com/desain/" class="hover:underline">Unduh Design</a></li>
+        <li><a href="https://bengkelprint.co.id/tutorial-produk/" class="hover:underline">Tutorial</a></li>
+        <li><a href="https://bengkelprintcare.com/chat-teknisi/" class="hover:underline">Chat Teknisi</a></li>
+      </ul>
+    </div>
+
+    <!-- Kolom 3 -->
+    <div>
+      <h4 class="font-semibold mb-3">Kebijakan</h4>
+      <ul class="space-y-1 text-sm">
+        <li><a href="https://bengkelprint.co.id/syarat-dan-ketentuan/" class="hover:underline">Syarat & Ketentuan</a></li>
+        <li><a href="https://bengkelprint.co.id/kebijakan-privasi/" class="hover:underline">Kebijakan Privasi</a></li>
+        <li><a href="https://bengkelprint.co.id/kebijakan-pengembalian-barang/" class="hover:underline">Kebijakan Pengembalian Barang</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bagian bawah -->
+  <div class="mt-10 text-center border-t border-white/20 pt-6">
+    <p class="text-sm opacity-80">© 2025 Bengkel Print Indonesia</p>
+  </div>
+
+  <!-- Maskot di kanan bawah -->
+  <img src="./images/image 8.png" alt="Maskot Bengkel Print"
+    class="absolute bottom-4 right-6 w-[80px] md:w-[235px] animate-bounce-slow">
+</footer>
+
+<!-- Animasi maskot lembut -->
+<style>
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+</style>
+
+
+  <!-- SCRIPTS: AOS init, Mobile toggle, Testimonial auto-slide (fa
+  st but not too smooth) -->
+  <script>
+    AOS.init({ duration: 650, once: true });
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconOpen = document.getElementById('iconOpen');
+    const iconClose = document.getElementById('iconClose');
+
+    mobileBtn?.addEventListener('click', () => {
+      const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+      mobileBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+
+    // Testimonial slider: show 1/2/3 slides depending on viewport
+    const track = document.getElementById('testiTrack');
+    const slides = document.querySelectorAll('.testi-slide');
+    let idx = 0;
+    function slidesPerView() {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 768) return 2;
+      return 1;
+    }
+
+    function goTo(index) {
+      const perView = slidesPerView();
+      const total = slides.length;
+      // clamp
+      if (index < 0) index = total - perView;
+      if (index > total - perView) index = 0;
+      idx = index;
+      const shift = (100 / perView) * idx;
+      track.style.transform = `translateX(-${shift}%)`;
+
+      // update indicators (if any)
+      const dots = document.querySelectorAll('[aria-label^="Indicator"]');
+      dots.forEach((d, i) => d.classList.toggle('bg-sky-600', i === Math.round(idx % dots.length)));
+    }
+
+    // auto advance
+    let auto = setInterval(() => { goTo(idx + 1); }, 3000);
+    // pause on hover
+    track?.addEventListener('mouseenter', () => clearInterval(auto));
+    track?.addEventListener('mouseleave', () => { auto = setInterval(() => { goTo(idx + 1); }, 3000); });
+
+    // handle resize so perView recalculated
+    window.addEventListener('resize', () => { goTo(idx); });
+
+    // initial
+    goTo(0);
+
+    // Accessibility: keyboard navigation for indicators
+    const indicators = document.querySelectorAll('[aria-label^="Indicator"]');
+    indicators.forEach((btn, i) => {
+      btn.addEventListener('click', () => goTo(i));
+      btn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goTo(i); } });
+    });
+
+    // NOTE: If you want the hero image to be local, replace the Unsplash URL with your local path.
+  </script>
+</body>
+</html>
